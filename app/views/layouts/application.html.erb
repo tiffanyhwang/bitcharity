@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="container-fluid">
+  <nav class="navbar navbar-default" role="navigation">
+      <%= render 'layouts/user_header' %>
+      <a class="navbar-brand" href="#">bitcharity</a>
+  </nav>
+  <hr />
+  <%= yield %>
+</div>
 
 </body>
 </html>
