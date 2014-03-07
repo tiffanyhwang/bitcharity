@@ -73,6 +73,11 @@ Bitcharity::Application.configure do
   config.active_support.deprecation = :notify
   config.assets.initialize_on_precompile = false
 
+  config.cache_classes = true
+  config.serve_static_assets = true
+  config.assets.compile = true
+  config.assets.digest = true
+
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
