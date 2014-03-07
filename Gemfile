@@ -13,7 +13,11 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'rails_12factor'
+end
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
