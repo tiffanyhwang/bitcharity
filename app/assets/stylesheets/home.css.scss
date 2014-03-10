@@ -1,3 +1,58 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	-webkit-font-smoothing: antialiased;
+	  text-rendering: optimizeLegibility;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', serif;
+}
+
+a {
+	font-family: 'Helvetica', sans-serif;
+	font-size:1.25em;
+	color: #2e2e2e !important;
+	
+	&:hover {
+		background: transparent !important;
+		color: black !important;
+	}
+}
+
+#title {
+	margin:auto;
+	padding-top:150px;
+	text-align:center;
+	
+	h1 {
+		font-size:100px;
+		color:black !important;
+	}
+	
+	p {
+		font-size:20px;
+		padding-top:10px;
+		padding-left:200px;
+		padding-right:200px;
+		color:#2e2e2e !important;
+	}
+	
+	#buttonlink {
+		padding-right:100px;
+		padding-left:100px;
+		
+		button {
+			background-color:#737373;
+			
+			a {
+				color:white !important;
+				font-size:20px;
+				font-style: helvetica;
+				
+				&:hover {
+					text-decoration:none;
+				}
+			}
+		}
+	}
+}
