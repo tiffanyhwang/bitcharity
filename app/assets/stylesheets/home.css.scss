@@ -12,7 +12,7 @@ a {
 	font-family: 'Helvetica', sans-serif;
 	font-size:1.25em;
 	color: #2e2e2e !important;
-	
+
 	&:hover {
 		background: transparent !important;
 		color: black !important;
@@ -23,12 +23,12 @@ a {
 	margin:auto;
 	padding-top:150px;
 	text-align:center;
-	
+
 	h1 {
 		font-size:100px;
 		color:black !important;
 	}
-	
+
 	p {
 		font-size:20px;
 		padding-top:10px;
@@ -36,19 +36,19 @@ a {
 		padding-right:200px;
 		color:#2e2e2e !important;
 	}
-	
+
 	#buttonlink {
 		padding-right:100px;
 		padding-left:100px;
-		
+
 		button {
-			background-color:#737373;
-			
+			background-color:#b19cd9;
+
 			a {
 				color:white !important;
-				font-size:20px;
-				font-style: helvetica;
-				
+				font-size:18px;
+				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
 				&:hover {
 					text-decoration:none;
 				}
