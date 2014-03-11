@@ -14,7 +14,7 @@ class DashboardController < ApplicationController
       "style" => "custom_large",
       "text" => "Start Donating",
       "include_email" => false,
-      "success_url" => "http://localhost:3000/dashboard",
+      "success_url" => request.original_url,
       "auto_redirect" => true,
       "variable_price" => false,
       "choose_price" => true,
