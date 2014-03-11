@@ -1,23 +1,7 @@
-body {
-	-webkit-font-smoothing: antialiased;
-	  text-rendering: optimizeLegibility;
-}
-
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica', serif;
+		font-family: 'Helvetica', serif;
 }
 
-a {
-	font-family: 'Helvetica', sans-serif;
-	font-size:1.25em;
-	color: #2e2e2e !important;
-
-	&:hover {
-		background: transparent !important;
-		color: black !important;
-	}
-}
 
 #title {
 	margin:auto;

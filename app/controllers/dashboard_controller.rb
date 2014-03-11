@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   def index
     #puts get_http('https://coinbase.com/api/v1/account/balance')
     coinbase_button
-
+    @charities = Charity.all
   end
 
   def coinbase_button
