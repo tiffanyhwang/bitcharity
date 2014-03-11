@@ -5,6 +5,14 @@ class DashboardController < ApplicationController
     @charities = Charity.all
   end
 
+  def selectPrimary
+    current_user.charity = Charity.find(params[:charity])
+    if current_user.save
+      flash[:notice] = "Your bitcoins this month will be donated to " + Charity.find(params[:charity]).name
+    end
+    redirect_to dashboard_path
+  end
+
   def coinbase_button
     button_options = {:button => {
       "type" => "subscription",

@@ -1,16 +1,31 @@
-<%= @button.embed_html.html_safe %>
-<div class="row">
-  <% @charities.each do |c| %>
-    <div class="col-sm-5 col-md-3">
-      <div class="thumbnail">
-        <%= image_tag c.logo %>
-        <div class="caption">
-          <h3><%= c.name %></h3>
-          <p><%= c.description %></p>
-          <p><a href="#" class="btn btn-primary" role="button">Pick <%= c.name %></a>
-            <a href="<%= c.url %>" class="btn btn-default" role="button">Learn More</a></p>
-        </div>
+<div id ="" class="container-fluid">
+  <center>
+    <div class="jumbotron">
+      <h1>A Little Can Mean A Lot</h1>
+      <p>Start contributing a little bit a month and pick the charity you want to contribute to! For each charity, we'll pool together bitcoin donations made by kind people like you and handle getting the funds in USD to them. (Or in Bitcoin if they request). A receipt of donations will be posted for each month along with the names of all the donors.</p>
+      <p><%= @button.embed_html.html_safe %></p>
+    </div>
+  </center>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <% @charities.each do |c| %>
+          <div class="col-sm-5 col-md-3">
+            <div class="thumbnail">
+              <%= image_tag c.logo %>
+              <div class="caption">
+                <h3><%= c.name %></h3>
+                <p><%= c.description %></p>
+                <p><%= button_to "Pick #{c.name}", dashboard_path({ :charity => c.id }), :class => "btn btn-primary" %><br />
+                  <a href="<%= c.url %>" class="btn btn-default" role="button">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
