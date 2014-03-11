@@ -8,6 +8,8 @@ gem 'thin'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+gem 'rest-client'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -19,6 +21,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+
+gem 'coinbase'
+gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

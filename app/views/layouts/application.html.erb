@@ -11,8 +11,24 @@
   <%= render 'layouts/user_header' %>
   <a class="navbar-brand" href="#">bitcharity</a>
 </nav>
+
+<center>
+  <% flash.each do |name, msg| %>
+
+    <% if msg.class == Array %>
+      <% msg.each do |message| %>
+        <%= content_tag :div, message, :id => "flash_#{name}" %>
+      <% end %>
+    <% else %>
+
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+    <% end %>
+  <% end %>
+</center>
+
 <hr />
 <%= yield %>
-  
+
 </body>
 </html>
