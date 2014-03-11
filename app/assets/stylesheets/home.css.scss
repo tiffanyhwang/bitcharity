@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #title {
 	margin:auto;
-	padding-top:150px;
+	padding-top:10%;
 	text-align:center;
 
 	h1 {
@@ -16,14 +16,12 @@ h1, h2, h3, h4, h5, h6 {
 	p {
 		font-size:20px;
 		padding-top:10px;
-		padding-left:200px;
-		padding-right:200px;
+		margin: 0 auto;
 		color:#2e2e2e !important;
 	}
 
 	#buttonlink {
-		padding-right:100px;
-		padding-left:100px;
+		margin: 0 auto;
 
 		button {
 			background-color:#b19cd9;
