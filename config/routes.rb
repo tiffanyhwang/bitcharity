@@ -1,12 +1,19 @@
 Bitcharity::Application.routes.draw do
+  resources :charities
+
   get "home/index"
-  devise_for :users
+
+  # devise login
+  devise_for :users, controllers: { sessions: "session" }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get "dashboard" => "dashboard#index"
+  post "accounting" => "accounting#processPayment"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
