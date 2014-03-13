@@ -1,8 +1,19 @@
-h1, h2, h3, h4, h5, h6 {
-		font-family: 'Helvetica', serif;
+body {
+
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
+h1, h2, h3, h4, h5, h6 {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		color: #7a7a7a !important;
+}
 
+p {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+header {
 #title {
 	margin:auto;
 	padding-top:10%;
@@ -10,14 +21,13 @@ h1, h2, h3, h4, h5, h6 {
 
 	h1 {
 		font-size:50px;
-		color:black !important;
 	}
 
 	p {
 		font-size:20px;
 		padding-top:10px;
 		margin: 0 auto;
-		color:#2e2e2e !important;
+		color:#7a7a7a !important;
 	}
 
 	#buttonlink {
@@ -34,6 +44,30 @@ h1, h2, h3, h4, h5, h6 {
 					text-decoration:none;
 				}
 			}
+			background-color:#c1a2de;
 		}
+	}
+}
+padding-bottom:50px;
+}
+
+.grey {
+	padding-top:20px;
+	margin-left:0px;
+	text-align:center;
+	background-color:#7a7a7a;
+	color: white !important;
+	h2, h3 {
+		color: white !important;
+	}
+	div {
+		display:block;
+	}
+	.row {
+		padding-bottom:30px;
+	}
+	
+	&:last-child {
+		padding-bottom:30px;
 	}
 }
