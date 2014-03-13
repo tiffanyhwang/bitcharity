@@ -13,6 +13,7 @@ Bitcharity::Application.routes.draw do
   root 'home#index'
 
   get "dashboard" => "dashboard#index"
+  post "dashboard" => "dashboard#selectPrimary"
   post "accounting" => "accounting#processPayment"
 
   # Example of regular route:

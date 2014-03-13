@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311200609) do
+ActiveRecord::Schema.define(version: 20140311235719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140311200609) do
     t.integer  "charity_id"
     t.decimal  "total"
     t.string   "button_code"
+    t.string   "name"
+    t.boolean  "active"
   end
 
   add_index "users", ["charity_id"], name: "index_users_on_charity_id", using: :btree
