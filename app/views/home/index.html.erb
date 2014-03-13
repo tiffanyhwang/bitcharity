@@ -1,31 +1,44 @@
+<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <header>
-<div id ="title" class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 col-xs-12">
-			<h1 class="lead">a little lot</h1>
+	<div id ="title" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<h1 class="lead">A little <%= image_tag "bitcoin.jpg", :height => 63 %>it becomes a lot</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xs-12">
+				<p class="lead">Donate just a dollar in bitcoin every month. We'll convert your bitcoins and donate it onto a nonprofit organizations of your choice. Contributing to society has never been easier.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xs-12">
+				<p><div id="buttonlink"><button type="button" class="btn btn-lg"><a href="/users/sign_up">Sign Up Today</a></button></div></p>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3 col-xs-12">
-			<p class="lead">Donate just a dollar in bitcoin every month. We'll convert your bitcoins and donate it onto a nonprofit organizations of your choice. Contributing to society has never been easier.</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3 col-xs-12">
-			<p><div id="buttonlink"><button type="button" class="btn btn-lg"><a href="/users/sign_up">Sign Up Today</a></button></div></p>
-		</div>
-	</div>
-</div>
-</header>
+	</header>
 <section>
-	<div class ="container-fluid grey"> 
+	<div class ="container-fluid grey" id="top"> 
 		<div class="col-md-4 col-xs-12">
-			<h3>No Extra Fees</h3>
-			<p>By donating with bitcoin, nonprofit organizations are able to accept donations without paying a credit card fee. 100% of your donation will go towards helping the charity of your choice.</p>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>No Extra Fees</h4>
+				</div>
+				<div class="panel-body">
+					<p>By donating with bitcoin, nonprofit organizations are able to accept donations without paying a credit card fee. 100% of your donation will go towards helping the charity of your choice.</p>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-4 col-xs-12">
-			<h3>No Mininum Donation</h3>
-			<p>You can start donating with just 25 cents a month</p>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>No Mininum Donation</h4>
+				</div>
+				<div class="panel-body">
+					<p>You can start donating with just 25 cents a month</p>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-4 col-xs-12">
 		</div>
@@ -40,8 +53,8 @@
 </section>
 <section>
 	<div class="container-fluid grey">
-		<div class="col-md-2 col-md-offset-2 col-xs-12 thumbnail">
-			<a href="www.watsi.org"><%= image_tag "watsi.png" %></a>
+		<div class="col-md-2 col-md-offset-2 col-xs-12 thumbnail box-shadow">
+			<a href="#"><%= image_tag "watsi.png" %></a>
 		</div>
 		<div class="col-md-2 col-md-offset-1 col-xs-12 thumbnail">
 			<a href="#"><%= image_tag "redcross.jpg" %></a>

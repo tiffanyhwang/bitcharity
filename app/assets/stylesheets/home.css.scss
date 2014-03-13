@@ -2,6 +2,7 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+	height:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,51 +15,50 @@ p {
 }
 
 header {
-#title {
-	margin:auto;
-	padding-top:10%;
-	text-align:center;
+	#title {
+		margin:auto;
+		padding-top:15%;
+		padding-bottom:15%;
+		text-align:center;
 
-	h1 {
-		font-size:50px;
-	}
+		h1 {
+			font-size:50px;
+		}
 
-	p {
-		font-size:20px;
-		padding-top:10px;
-		margin: 0 auto;
-		color:#7a7a7a !important;
-	}
+		p {
+			font-size:20px;
+			padding-top:10px;
+			margin: 0 auto;
+			color:#7a7a7a !important;
+		}
 
-	#buttonlink {
-		margin: 0 auto;
+		#buttonlink {
+			margin: 0 auto;
 
-		button {
+			button {
 
-			a {
-				color:white !important;
-				font-size:18px;
-				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+				a {
+					color:white !important;
+					font-size:18px;
+					font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				
-				&:hover {
-					text-decoration:none;
+					&:hover {
+						text-decoration:none;
+					}
 				}
+				background-color:#c1a2de;
 			}
-			background-color:#c1a2de;
 		}
 	}
-}
-padding-bottom:50px;
 }
 
 .grey {
 	padding-top:20px;
 	margin-left:0px;
 	text-align:center;
-	background-color:#7a7a7a;
-	color: white !important;
-	h2, h3 {
-		color: white !important;
+	h2 {
+		font-family:"Lobster";
+		font-size:50px;
 	}
 	div {
 		display:block;
@@ -70,4 +70,9 @@ padding-bottom:50px;
 	&:last-child {
 		padding-bottom:30px;
 	}
+	
+	.box-shadow {
+	  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25); // iOS <4.3 & Android <4.1
+	          box-shadow: 0 1px 3px rgba(0,0,0,.25); 
+	} //this doesn't work
 }
