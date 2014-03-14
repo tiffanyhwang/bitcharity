@@ -1,40 +1,78 @@
-h1, h2, h3, h4, h5, h6 {
-		font-family: 'Helvetica', serif;
+body {
+
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	height:100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		color: #7a7a7a !important;
+}
 
-#title {
-	margin:auto;
-	padding-top:10%;
-	text-align:center;
+p {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
 
-	h1 {
-		font-size:50px;
-		color:black !important;
-	}
+header {
+	#title {
+		margin:auto;
+		padding-top:15%;
+		padding-bottom:15%;
+		text-align:center;
 
-	p {
-		font-size:20px;
-		padding-top:10px;
-		margin: 0 auto;
-		color:#2e2e2e !important;
-	}
+		h1 {
+			font-size:50px;
+		}
 
-	#buttonlink {
-		margin: 0 auto;
+		p {
+			font-size:20px;
+			padding-top:10px;
+			margin: 0 auto;
+			color:#7a7a7a !important;
+		}
 
-		button {
-			background-color:#b19cd9;
+		#buttonlink {
+			margin: 0 auto;
 
-			a {
-				color:white !important;
-				font-size:18px;
-				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			button {
 
-				&:hover {
-					text-decoration:none;
+				a {
+					color:white !important;
+					font-size:18px;
+					font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+				
+					&:hover {
+						text-decoration:none;
+					}
 				}
+				background-color:#c1a2de;
 			}
 		}
 	}
+}
+
+.grey {
+	padding-top:20px;
+	margin-left:0px;
+	text-align:center;
+	h2 {
+		font-family:"Lobster";
+		font-size:50px;
+	}
+	div {
+		display:block;
+	}
+	.row {
+		padding-bottom:30px;
+	}
+	
+	&:last-child {
+		padding-bottom:30px;
+	}
+	
+	.box-shadow {
+	  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25); // iOS <4.3 & Android <4.1
+	          box-shadow: 0 1px 3px rgba(0,0,0,.25); 
+	} //this doesn't work
 }
