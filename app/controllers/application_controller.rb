@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
+  helper_method :coinbase
 
   def after_sign_in_path_for(resource)
     dashboard_path
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def coinbase
     @coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
   end
-  
+
   def get_http(url, body=nil)
     nonce = (Time.now.to_f * 1e6).to_i
     message = nonce.to_s + url + body.to_json
