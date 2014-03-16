@@ -9,11 +9,11 @@ class DashboardController < ApplicationController
 
     @usd_totals = {}
     @charities.each do |charity|
-      sumBTC = 0
+      sumBTC = 0.0
       charity.transactions.each do |transaction|
         sumBTC += transaction.totalBTC
       end
-      @usd_totals[charity.id] = number_with_precision(sumBTC/coinbase.buy_price(1).to_f, :precision => 2)
+      @usd_totals[charity.id] = number_with_precision(sumBTC*coinbase.buy_price(1).to_f, :precision => 2)
     end
 
     @donations = Transaction.where email: current_user.email
