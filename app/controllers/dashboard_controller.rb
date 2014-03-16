@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
     @charities.each do |charity|
       sumBTC = 0.0
       charity.transactions.each do |transaction|
-        sumBTC += transaction.totalBTC
+        sumBTC += transaction.totalBTC * 0.00000001
       end
       @usd_totals[charity.id] = number_with_precision(sumBTC*coinbase.buy_price(1).to_f, :precision => 2)
     end
@@ -46,7 +46,7 @@ class DashboardController < ApplicationController
       "price3" => "5.00",
       "price3" => "10.00"
     }}
-    @button = coinbase.create_button "Monthly donation", 1.00.to_money('USD'), "100% of your donation, minus bitcoin conversion fees will be converted to USD and donated to the bitcharity charity of your choice every month. A receipt of the every month's donation will be posted at the end of each month.", current_user.id, button_options
+    @button = coinbase.create_button "Monthly GiveBit Donation", 1.00.to_money('USD'), "100% of your donation, minus bitcoin conversion fees will be converted to USD and donated to the bitcharity charity of your choice every month. A receipt of the every month's donation will be posted at the end of each month.", current_user.id, button_options
   end
 
 end

@@ -73,7 +73,7 @@
             </a>
             <div class="media-body">
               <h4 class="media-heading">donation.charity.name</h4>
-              You donated &#36;<%= money = Money.us_dollar(donation.totalUSD).to_s %> (<%= number_with_precision(donation.totalBTC/1000000000.0, :precision => 10) %> BTC)
+              You donated &#36;<%= money = Money.us_dollar(donation.totalUSD).to_s %> (<%= number_with_precision(donation.totalBTC*0.00000001, :precision => 10) %> BTC)
               <% if donation.status == "pending" %>
                 <span class="label label-warning"><%= donation.status %></span>
               <% else %>
