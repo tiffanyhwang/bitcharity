@@ -1,8 +1,8 @@
 class DashboardController < ApplicationController
   before_filter :authenticate_user!
+
   def index
     #puts get_http('https://coinbase.com/api/v1/account/balance')
-    if ()
     coinbase_button
     @charities = Charity.all
 
