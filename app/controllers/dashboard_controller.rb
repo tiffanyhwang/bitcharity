@@ -17,7 +17,6 @@ class DashboardController < ApplicationController
     end
 
     @donations = Transaction.where email: current_user.email
-    puts current_user.inspect
   end
 
   def selectPrimary

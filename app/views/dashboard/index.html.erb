@@ -3,8 +3,8 @@
     <div class="row">
       <div class="jumbotron">
         <div class="page-header">
-          <h1><%= current_user.name %><small>&#36;<%= money = Money.us_dollar(current_user.amount).to_s %>/month</small></h1>
-          <h3>donating this month to: <strong><%= current_user.charity.name %></strong></h3>
+          <h1><%= current_user.name %> <small>&#36;<%= money = Money.us_dollar(current_user.amount).to_s %>/month</small></h1>
+          <h3>currently donating to: <strong><%= current_user.charity.name %></strong></h3>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 <div class="navbar-collapse collapse">
 
   <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Total Donated: #{coinbase.balance.format} ($#{number_with_precision(coinbase.balance.to_f*coinbase.buy_price(1).to_f, :precision => 2)})", root_path %></li>
+      <li><%= link_to "Total Donated: #{coinbase.balance.format} ($#{number_with_precision(coinbase.balance.to_f*coinbase.buy_price(1).to_f, :precision => 2)})", faq_path %></li>
+      <li><%= link_to "Questions", faq_path %></li>
     <% if user_signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     <% else %>

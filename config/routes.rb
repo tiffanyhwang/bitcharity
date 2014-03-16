@@ -1,4 +1,5 @@
 Bitcharity::Application.routes.draw do
+  get "faq/index"
   resources :charities
 
   get "home/index"
@@ -15,6 +16,8 @@ Bitcharity::Application.routes.draw do
   get "dashboard" => "dashboard#index"
   post "dashboard" => "dashboard#selectPrimary"
   post "accounting" => "accounting#processPayment"
+
+  get "faq" => "faq#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
