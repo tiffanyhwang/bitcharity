@@ -3,6 +3,9 @@ class DashboardController < ApplicationController
     #puts get_http('https://coinbase.com/api/v1/account/balance')
     coinbase_button
     @charities = Charity.all
+
+    @donations = Transaction.where email: current_user.email
+    puts @donations
   end
 
   def selectPrimary

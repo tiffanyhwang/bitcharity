@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311235719) do
+ActiveRecord::Schema.define(version: 20140316054409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,23 @@ ActiveRecord::Schema.define(version: 20140311235719) do
     t.datetime "updated_at"
     t.string   "url"
   end
+
+  create_table "transactions", force: true do |t|
+    t.string   "transaction_id"
+    t.string   "hash"
+    t.string   "email"
+    t.integer  "totalBTC"
+    t.string   "order_id"
+    t.integer  "totalUSD"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "charity_id"
+    t.string   "status",         default: "pending"
+    t.date     "process_date"
+  end
+
+  add_index "transactions", ["charity_id"], name: "index_transactions_on_charity_id", using: :btree
+  add_index "transactions", ["email"], name: "index_transactions_on_email", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140311235719) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "charity_id"
-    t.decimal  "total"
+    t.decimal  "amount"
     t.string   "button_code"
     t.string   "name"
     t.boolean  "active"
