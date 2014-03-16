@@ -3,14 +3,13 @@ class AccountingController < ApplicationController
 
   def processPayment
     if params[:secret] == ENV['COINBASE_CALLBACK_SECRET']
-      object = params[:recurring_payment]
+      object = params[:order]
 
       if object
         user_id = object["custom"]
 
 
-        user = User.find_by_email(user_id)
-        user.active = true
+        user = User.find(user_id)
         user.amount = object["total_native"]["cents"]
         user.save
 
@@ -26,6 +25,20 @@ class AccountingController < ApplicationController
           trans.save
         else
 
+        end
+      end
+
+      recurring = params[:recurring_payment]
+
+      if recurring
+        if object["status"] == "active"
+          user = User.find(user_id)
+          user.active = true
+          user.save
+        elsif object["status"] == "cancelled"
+          user = User.find(user_id)
+          user.active = false
+          user.save
         end
       end
 
