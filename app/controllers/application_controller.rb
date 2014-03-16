@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
 
   def coinbase
     @coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
-    Money.add_rate("BTC", "USD", coinbase.buy_price(1).to_f)
   end
 
   def get_http(url, body=nil)

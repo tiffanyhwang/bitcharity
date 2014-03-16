@@ -1,10 +1,20 @@
 class DashboardController < ApplicationController
+  include ActionView::Helpers::NumberHelper
   before_filter :authenticate_user!
 
   def index
     #puts get_http('https://coinbase.com/api/v1/account/balance')
     coinbase_button
     @charities = Charity.all
+
+    @usd_totals = {}
+    @charities.each do |charity|
+      sumBTC = 0
+      charity.transactions.each do |transaction|
+        sumBTC += transaction.totalBTC
+      end
+      @usd_totals[charity.id] = number_with_precision(sumBTC/coinbase.buy_price(1).to_f, :precision => 2)
+    end
 
     @donations = Transaction.where email: current_user.email
     puts current_user.inspect
