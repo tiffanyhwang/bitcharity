@@ -36,7 +36,7 @@ class AccountingController < ApplicationController
         if recurring["status"] == "active"
           user.active = true
           user.save
-        elsif recurring["status"] == "cancelled"
+        elsif recurring["status"] == "canceled"
           user.active = false
           user.save
         elsif recurring["status"] == "paused"
