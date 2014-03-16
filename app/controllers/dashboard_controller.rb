@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
     @charities = Charity.all
 
     @donations = Transaction.where email: current_user.email
-    puts @user.inspect
+    puts current_user.inspect
   end
 
   def selectPrimary
