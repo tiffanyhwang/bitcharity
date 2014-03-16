@@ -37,7 +37,7 @@
             <div class="thumbnail">
               <%= image_tag c.logo %>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="<%= (@usd_totals[c.id].to_f/10.0*100.0).to_i %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @usd_totals[c.id].to_f/10.0%>%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%= (@usd_totals[c.id].to_f/10.0*100.0).to_i %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@usd_totals[c.id].to_f/10.0*100.0).to_i %>%;">
                   &#36;<%= @usd_totals[c.id] %>
                 </div>
               </div>
