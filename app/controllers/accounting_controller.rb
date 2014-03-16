@@ -31,11 +31,15 @@ class AccountingController < ApplicationController
       recurring = params[:recurring_payment]
 
       if recurring
+        user_id = recurring["custom"]
         user = User.find(user_id.to_i)
         if object["status"] == "active"
           user.active = true
           user.save
         elsif object["status"] == "cancelled"
+          user.active = false
+          user.save
+        elsif object["status"] == "paused"
           user.active = false
           user.save
         end
