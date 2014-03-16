@@ -13,7 +13,7 @@ class AccountingController < ApplicationController
         user.amount = object["total_native"]["cents"]
         user.save
 
-        if object["status"] == "active"
+        if object["status"] == "completed"
           trans = Transaction.new( :order_id => object["id"],
                                    :transaction_id => object["transaction"]["id"],
                                    :email => user.email,
@@ -33,13 +33,13 @@ class AccountingController < ApplicationController
       if recurring
         user_id = recurring["custom"]
         user = User.find(user_id.to_i)
-        if object["status"] == "active"
+        if recurring["status"] == "active"
           user.active = true
           user.save
-        elsif object["status"] == "cancelled"
+        elsif recurring["status"] == "cancelled"
           user.active = false
           user.save
-        elsif object["status"] == "paused"
+        elsif recurring["status"] == "paused"
           user.active = false
           user.save
         end
@@ -47,7 +47,12 @@ class AccountingController < ApplicationController
 
 
       respond_to do |format|
-        format.json{render :json => object}
+        if object
+          format.json{render :json => object}
+        end
+        if recurring
+          format.json{render :json => recurring}
+        end
       end
     else
       render :status=>401, :json=>{:message=>"No."}
