@@ -9,7 +9,7 @@ class AccountingController < ApplicationController
         user_id = object["custom"]
 
 
-        user = User.find(user_id)
+        user = User.find(user_id.to_i)
         user.amount = object["total_native"]["cents"]
         user.save
 
@@ -31,12 +31,11 @@ class AccountingController < ApplicationController
       recurring = params[:recurring_payment]
 
       if recurring
+        user = User.find(user_id.to_i)
         if object["status"] == "active"
-          user = User.find(user_id)
           user.active = true
           user.save
         elsif object["status"] == "cancelled"
-          user = User.find(user_id)
           user.active = false
           user.save
         end
