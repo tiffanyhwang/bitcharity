@@ -16,12 +16,15 @@ Charity.create([
   {
     name:'American Red Cross',
     description:'The American Red Cross is where people mobilize to help their neighbors—across the street, across the country, and across the world—in emergencies. Each year, in communities large and small, victims of roughly 70,000 disasters turn to neighbors familiar and new—the more than half a million volunteers and 35,000 employees of the Red Cross.
-
-Through over 700 locally supported chapters, more than 15 million people gain the skills they need to prepare for and respond to emergencies in their homes, communities and world.
-
-Some four million people give blood—the gift of life—through the Red Cross, making it the largest supplier of blood and blood products in the United States. And the Red Cross helps thousands of U.S. service members separated from their families by military duty stay connected.
 ',
     logo:'redcross.jpg',
     url:'http://www.redcross.org'
+  },
+  {
+    name:'American Cancer Society',
+    description:'We save lives by helping people stay well by preventing cancer or detecting it early; helping people get well by being there for them during and after a cancer diagnosis; by finding cures through investment in groundbreaking discovery; and by fighting back by rallying lawmakers to pass laws to defeat cancer and by rallying communities worldwide to join the fight.
+',
+    logo:'cancer.jpg',
+    url:'http://www.cancer.org'
   }
   ])
