@@ -3,28 +3,32 @@ class AccountingController < ApplicationController
 
   def processPayment
     if params[:secret] == ENV['COINBASE_CALLBACK_SECRET']
-      object = params[:order]
-      email = object["custom"]
+      object = params[:recurring_payment]
+
+      if object
+        user_id = object["custom"]
 
 
-      user = User.find_by_email(email)
-      user.active = true
-      user.amount = object["total_native"]["cents"]
-      user.save
-      
-      if object["status"] == "completed"
-        trans = Transaction.new( :order_id => object["id"],
-                                 :transaction_id => object["transaction"]["id"],
-                                 :email => email,
-                                 :hash => object["transaction"]["hash"],
-                                 :totalBTC => object["total_btc"]["cents"],
-                                 :totalUSD => object["total_native"]["cents"])
-        trans.charity = user.charity
+        user = User.find_by_email(user_id)
+        user.active = true
+        user.amount = object["total_native"]["cents"]
+        user.save
 
-        trans.save
-      else
+        if object["status"] == "active"
+          trans = Transaction.new( :order_id => object["id"],
+                                   :transaction_id => object["transaction"]["id"],
+                                   :email => user.email,
+                                   :hash => object["transaction"]["hash"],
+                                   :totalBTC => object["total_btc"]["cents"],
+                                   :totalUSD => object["total_native"]["cents"])
+          trans.charity = user.charity
 
+          trans.save
+        else
+
+        end
       end
+
 
       respond_to do |format|
         format.json{render :json => object}
